@@ -15,12 +15,6 @@ var pattern = regexp.MustCompile(*patternFlag)
 var replace = flag.String("replace", "", "replace line for matched lines")
 var inFiles = flag.String("infiles", "", "the glob pattern of input text files")
 
-// var flag.Usage = func() {
-//     fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
-//     fmt.Fprintf(os.Stderr, "Replace is a tool for replacing lines of text.
-
-// }
-
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
