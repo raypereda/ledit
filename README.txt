@@ -27,4 +27,4 @@ mv input2.rds.edited input3.rds
 input3.rds has both lines edited. DbServerName100 changed to DbServerName101, 
 DatabaseName200 changed to DatabaseName201, and the value for <IntegratedSecurity> was changed to False.
 
-The OSX executable is cmd/replace/replace, and the Windows 64-bit executable is cmd/replace.exe.
+The OSX executable is cmd/replace/replace, and the Windows 64-bit executable is cmd/replace/replace.exe.
