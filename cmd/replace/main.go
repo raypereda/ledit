@@ -66,8 +66,7 @@ func editFile(filename string) {
 		line := scanner.Text()
 		outLine := line
 		if pattern.MatchString(line) {
-			fmt.Printf("line: %3d", lineNum) 
-			fmt.Println(" matched: ", line)
+			fmt.Printf("line: %3d matched: %s\n", lineNum, line) 
 			
 			outLine = *replace
 			fmt.Println("replaced: ", outLine)	
