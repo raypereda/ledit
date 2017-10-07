@@ -2,7 +2,7 @@
 From the command-line help:
 
 $ ledit -h
-ledit is a line editor to tranform lines in text files.
+ledit is a line editor to transform lines in text files.
 Matches of the pattern pat are replaced with the replacement string repl.
 The syntax of the regular is here: https://github.com/google/re2/wiki/Syntax
 Inside repl, $ signs are interpreted as in the link below.
