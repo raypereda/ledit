@@ -1,5 +1,0 @@
-some lines before
-    <ConnectString>Data Source=DbServerName101;Initial Catalog=DatabaseName201</ConnectString>
-some middle lines
-   <IntegratedSecurity>False</IntegratedSecurity>
-some ending lines

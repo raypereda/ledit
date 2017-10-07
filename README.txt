@@ -1,30 +1,58 @@
-$./replace -h
 
-Usage of ./replace:
-Replace is a tool for replacing lines in text files.
-Lines matching a regular expression are replaced with fixed text.
-  -infiles string
-    	the glob pattern of input text files
-  -pattern string
-    	line pattern for searching for
-  -replace string
-    	replace line for matched lines
+From the command-line help:
 
-Replace one line a time by executing replace once per line. If that edit is good, 
-move the .edited to original filename. And then repeat for each line edit.
+$ ledit -h
+ledit is a line editor to tranform lines in text files.
+Matches of the pattern pat are replaced with the replacement string repl.
+The syntax of the regular is here: https://github.com/google/re2/wiki/Syntax
+Inside repl, $ signs are interpreted as in the link below.
+https://golang.org/pkg/regexp/#Regexp.Expand
+For instance $1 represents the text of the first submatch.
+The output file has an ".ledit" appended to the end.
 
+  -debug
+    	prints debug info to standard error
+  -input string
+    	the glob pattern of input text files. Empty string uses stdin and stdout.
+  -pat string
+    	the regular expresion searched within each line
+  -repl string
+    	replace text for pattern matched
+      
+-------------------
+Examples:
 
-./replace -infiles="input1.rds" -pattern=ConnectString \
-   -replace="      <ConnectString>Data Source=DbServerName101;Initial Catalog=DatabaseName201</ConnectString>"
+Example #1
+$ ledit -debug -pat=dog -repl=cat -input=input1.txt
+Debug for  ledit
+glob pattern of input files: "input1.txt"
+regular expression pattern : "dog"
+replacement expression     : "cat"
+editing file:  input1.txt
+line:  2
+matched      :  Let's go walk the dog at night.
+replaced with:  Let's go walk the cat at night.
 
-mv input1.rds.edit input2.rds
+Example #2
+$ ledit -debug -pat="<tag39>false" -repl="<tag39>true" -input=input2.html
+Debug for  ledit
+glob pattern of input files: "input2.html"
+regular expression pattern : "<tag39>false"
+replacement expression     : "<tag39>true"
+editing file:  input2.html
+line:  4
+matched      :  <tag39>false</tag39>
+replaced with:  <tag39>true</tag39>
 
-./replace -infiles="input2.rds" -pattern=IntegratedSecurity \ 
-   -replace="   <IntegratedSecurity>False</IntegratedSecurity>"
+Example #3
+$ ledit -debug -pat=10.0.0.2 -repl=10.0.0.99 -input=input3.toml
+Debug for  ledit
+glob pattern of input files: "input3.toml"
+regular expression pattern : "10.0.0.2"
+replacement expression     : "10.0.0.99"
+editing file:  input3.toml
+line:  4
+matched      :    ip = "10.0.0.2"
+replaced with:    ip = "10.0.0.99"
 
-mv input2.rds.edited input3.rds
-
-input3.rds has both lines edited. DbServerName100 changed to DbServerName101, 
-DatabaseName200 changed to DatabaseName201, and the value for <IntegratedSecurity> was changed to False.
-
-The OSX executable is cmd/replace/replace, and the Windows 64-bit executable is cmd/replace/replace.exe.
+The OSX executable is cmd/ledit/ledit, and the Windows 64-bit executable is cmd/ledit/ledit.exe.
