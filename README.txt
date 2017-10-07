@@ -55,4 +55,5 @@ line:  4
 matched      :    ip = "10.0.0.2"
 replaced with:    ip = "10.0.0.99"
 
-The OSX executable is cmd/ledit/ledit, and the Windows 64-bit executable is cmd/ledit/ledit.exe.
+The OSX executable is cmd/ledit/ledit.
+The Windows 64-bit executable is cmd/ledit/ledit.exe.
