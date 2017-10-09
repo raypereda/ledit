@@ -60,4 +60,4 @@ The Windows 64-bit executable is cmd/ledit/ledit.exe.
 
 sed is a stream editor that is a bit old and cryptic. 
 You can problem solve your problem with a line editing using sed. 
-I prefer something an easy to use and easy to modify source code.
+I prefer something easy to use and easy to modify source code.
