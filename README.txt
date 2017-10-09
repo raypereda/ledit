@@ -58,5 +58,6 @@ replaced with:    ip = "10.0.0.99"
 The OSX executable is cmd/ledit/ledit.
 The Windows 64-bit executable is cmd/ledit/ledit.exe.
 
-sed is a stream editor that is a bit old and cryptic. You can solve your problem with a line editing using that. 
+sed is a stream editor that is a bit old and cryptic. 
+You can problem solve your problem with a line editing using sed. 
 I prefer something an easy to use and easy to modify source code.
